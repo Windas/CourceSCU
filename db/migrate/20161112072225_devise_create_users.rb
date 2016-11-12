@@ -7,8 +7,10 @@ class DeviseCreateUsers < ActiveRecord::Migration[5.0]
       t.boolean :active,            null: false, default: true
       t.string :phone
       t.string :nick_name,          null: false, default: ""
-      t.string :name
-      t.string :class_number
+      t.string :name,               null: false, default: ""
+      t.string :class_number,       null: false, default: ""
+      t.string :focus,              null: false, default: "1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23"
+      t.string :description,        null: false, default: ""
 
       ## Recoverable
       t.string   :reset_password_token

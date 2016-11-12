@@ -24,23 +24,25 @@ ActiveRecord::Schema.define(version: 20161112130320) do
   end
 
   create_table "users", force: :cascade do |t|
-    t.string   "email",                  default: "",   null: false
-    t.string   "encrypted_password",     default: "",   null: false
-    t.boolean  "active",                 default: true, null: false
+    t.string   "email",                  default: "",                                                            null: false
+    t.string   "encrypted_password",     default: "",                                                            null: false
+    t.boolean  "active",                 default: true,                                                          null: false
     t.string   "phone"
-    t.string   "nick_name",              default: "",   null: false
-    t.string   "name"
-    t.string   "class_number"
+    t.string   "nick_name",              default: "",                                                            null: false
+    t.string   "name",                   default: "",                                                            null: false
+    t.string   "class_number",           default: "",                                                            null: false
+    t.string   "focus",                  default: "1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23", null: false
+    t.string   "description",            default: "",                                                            null: false
     t.string   "reset_password_token"
     t.datetime "reset_password_sent_at"
     t.datetime "remember_created_at"
-    t.integer  "sign_in_count",          default: 0,    null: false
+    t.integer  "sign_in_count",          default: 0,                                                             null: false
     t.datetime "current_sign_in_at"
     t.datetime "last_sign_in_at"
     t.string   "current_sign_in_ip"
     t.string   "last_sign_in_ip"
-    t.datetime "created_at",                            null: false
-    t.datetime "updated_at",                            null: false
+    t.datetime "created_at",                                                                                     null: false
+    t.datetime "updated_at",                                                                                     null: false
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
