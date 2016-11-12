@@ -1,0 +1,66 @@
+/ <!-- <h2>Log in</h2>
+/ 
+/ <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
+/   <div class="field">
+/     <%= f.label :email %><br />
+/     <%= f.email_field :email, autofocus: true %>
+/   </div>
+/ 
+/   <div class="field">
+/     <%= f.label :password %><br />
+/     <%= f.password_field :password, autocomplete: "off" %>
+/   </div>
+/ 
+/   <% if devise_mapping.rememberable? -%>
+/     <div class="field">
+/       <%= f.check_box :remember_me %>
+/       <%= f.label :remember_me %>
+/     </div>
+/   <% end -%>
+/ 
+/   <div class="actions">
+/     <%= f.submit "Log in" %>
+/   </div>
+/ <% end %>
+/ 
+/ <%= render "devise/shared/links" %> -->
+
+.login-box
+      .login-logo
+        a[href="../../index2.html"]
+          b
+            | Admin
+          | LTE
+      .login-box-body
+        p.login-box-msg
+          | Sign in to start your session
+        form[action="../../index2.html" method="post"]
+          .form-group.has-feedback
+            input.form-control[type="email" placeholder="Email"]
+            span.glyphicon.glyphicon-envelope.form-control-feedback
+          .form-group.has-feedback
+            input.form-control[type="password" placeholder="Password"]
+            span.glyphicon.glyphicon-lock.form-control-feedback
+          .row
+            .col-xs-8
+              .checkbox.icheck
+                label
+                  input[type="checkbox"]
+                  |  Remember Me
+            .col-xs-4
+              button.btn.btn-primary.btn-block.btn-flat[type="submit"]
+                | Sign In
+        .social-auth-links.text-center
+          p
+            | - OR -
+          a.btn.btn-block.btn-social.btn-facebook.btn-flat[href="#"]
+            i.fa.fa-facebook
+            |  Sign in using Facebook
+          a.btn.btn-block.btn-social.btn-google.btn-flat[href="#"]
+            i.fa.fa-google-plus
+            |  Sign in using Google+
+        a[href="#"]
+          | I forgot my password
+        br
+        a.text-center[href="register.html"]
+          | Register a new membership
