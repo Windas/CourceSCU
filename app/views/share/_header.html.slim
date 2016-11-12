@@ -181,8 +181,7 @@ header.main-header
             /         | Friends
             li.user-footer
               .pull-left
-                a.btn.btn-default.btn-flat[href="#"]
-                  | 个人中心
+                = link_to '个人中心', user_path(current_user.id), class: 'btn btn-default btn-flat'
               .pull-right
                 = link_to '注销', destroy_user_session_path, class: 'btn btn-default btn-flat', method: 'delete'
         / li
