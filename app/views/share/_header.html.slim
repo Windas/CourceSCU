@@ -1,0 +1,511 @@
+header.main-header
+  a.logo[href="index2.html"]
+    span.logo-mini
+      b
+        | A
+      | LT
+    span.logo-lg
+      b
+        | Admin
+      | LTE
+  nav.navbar.navbar-static-top
+    a.sidebar-toggle[href="#" data-toggle="offcanvas" role="button"]
+      span.sr-only
+        | Toggle navigation
+    .navbar-custom-menu
+      ul.nav.navbar-nav
+        li.dropdown.messages-menu
+          a.dropdown-toggle[href="#" data-toggle="dropdown"]
+            i.fa.fa-envelope-o
+            span.label.label-success
+              | 4
+          ul.dropdown-menu
+            li.header
+              | You have 4 messages
+            li
+              ul.menu
+                li
+                  a[href="#"]
+                    .pull-left
+                      = image_tag 'user2-160x160.jpg', class: 'img-circle', alt: 'User Image'
+                    h4
+                      |  Support Team 
+                      small
+                        i.fa.fa-clock-o
+                        |  5 mins
+                    p
+                      | Why not buy a new awesome theme?
+                li
+                  a[href="#"]
+                    .pull-left
+                      = image_tag 'user3-128x128.jpg', class: 'img-circle', alt: 'User Image'
+                    h4
+                      |  AdminLTE Design Team 
+                      small
+                        i.fa.fa-clock-o
+                        |  2 hours
+                    p
+                      | Why not buy a new awesome theme?
+                li
+                  a[href="#"]
+                    .pull-left
+                      = image_tag 'user3-128x128.jpg', class: 'img-circle', alt: 'User Image'
+                    h4
+                      |  Sales Department 
+                      small
+                        i.fa.fa-clock-o
+                        |  Yesterday
+                    p
+                      | Why not buy a new awesome theme?
+                li
+                  a[href="#"]
+                    .pull-left
+                      = image_tag 'user4-128x128.jpg', class: 'img-circle', alt: 'User Image' 
+                    h4
+                      |  Reviewers 
+                      small
+                        i.fa.fa-clock-o
+                        |  2 days
+                    p
+                      | Why not buy a new awesome theme?
+            li.footer
+              a[href="#"]
+                | See All Messages
+        li.dropdown.notifications-menu
+          a.dropdown-toggle[href="#" data-toggle="dropdown"]
+            i.fa.fa-bell-o
+            span.label.label-warning
+              | 10
+          ul.dropdown-menu
+            li.header
+              | You have 10 notifications
+            li
+              ul.menu
+                li
+                  a[href="#"]
+                    i.fa.fa-users.text-aqua
+                    |  5 new members joined today 
+                li
+                  a[href="#"]
+                    i.fa.fa-warning.text-yellow
+                    |  Very long description here that may not fit into the page and may cause design problems 
+                li
+                  a[href="#"]
+                    i.fa.fa-users.text-red
+                    |  5 new members joined 
+                li
+                  a[href="#"]
+                    i.fa.fa-shopping-cart.text-green
+                    |  25 sales made 
+                li
+                  a[href="#"]
+                    i.fa.fa-user.text-red
+                    |  You changed your username 
+            li.footer
+              a[href="#"]
+                | View all
+        li.dropdown.tasks-menu
+          a.dropdown-toggle[href="#" data-toggle="dropdown"]
+            i.fa.fa-flag-o
+            span.label.label-danger
+              | 9
+          ul.dropdown-menu
+            li.header
+              | You have 9 tasks
+            li
+              ul.menu
+                li
+                  a[href="#"]
+                    h3
+                      |  Design some buttons 
+                      small.pull-right
+                        | 20%
+                    .progress.xs
+                      .progress-bar.progress-bar-aqua[style="width: 20%" role="progressbar" aria-valuenow="20" aria-valuemin="0" aria-valuemax="100"]
+                        span.sr-only
+                          | 20% Complete
+                li
+                  a[href="#"]
+                    h3
+                      |  Create a nice theme 
+                      small.pull-right
+                        | 40%
+                    .progress.xs
+                      .progress-bar.progress-bar-green[style="width: 40%" role="progressbar" aria-valuenow="20" aria-valuemin="0" aria-valuemax="100"]
+                        span.sr-only
+                          | 40% Complete
+                li
+                  a[href="#"]
+                    h3
+                      |  Some task I need to do 
+                      small.pull-right
+                        | 60%
+                    .progress.xs
+                      .progress-bar.progress-bar-red[style="width: 60%" role="progressbar" aria-valuenow="20" aria-valuemin="0" aria-valuemax="100"]
+                        span.sr-only
+                          | 60% Complete
+                li
+                  a[href="#"]
+
+                  h3
+                    |  Make beautiful transitions 
+                    small.pull-right
+                      | 80%
+                  .progress.xs
+                    .progress-bar.progress-bar-yellow[style="width: 80%" role="progressbar" aria-valuenow="20" aria-valuemin="0" aria-valuemax="100"]
+                      span.sr-only
+                        | 80% Complete
+            li.footer
+              a[href="#"]
+                | View all tasks
+        li.dropdown.user.user-menu
+          a.dropdown-toggle[href="#" data-toggle="dropdown"]
+            = image_tag 'user2-160x160.jpg', class: 'user-image', alt: 'User Image'
+            span.hidden-xs
+              | Alexander Pierce
+          ul.dropdown-menu
+            li.user-header
+              = image_tag 'user2-160x160.jpg', class: 'img-circle', alt: 'User Image'
+              p
+                |  Alexander Pierce - Web Developer 
+                small
+                  | Member since Nov. 2012
+            li.user-body
+              .row
+                .col-xs-4.text-center
+                  a[href="#"]
+                    | Followers
+                .col-xs-4.text-center
+                  a[href="#"]
+                    | Sales
+                .col-xs-4.text-center
+                  a[href="#"]
+                    | Friends
+            li.user-footer
+              .pull-left
+                a.btn.btn-default.btn-flat[href="#"]
+                  | Profile
+              .pull-right
+                a.btn.btn-default.btn-flat[href="#"]
+                  | Sign out
+        li
+          a[href="#" data-toggle="control-sidebar"]
+            i.fa.fa-gears
+aside.main-sidebar
+  section.sidebar
+    .user-panel
+      .pull-left.image
+        = image_tag 'user2-160x160.jpg', class: 'img-circle', alt: 'User Image'
+      .pull-left.info
+        p
+          | 测试用户1
+        a[href="#"]
+          i.fa.fa-circle.text-success
+          |  在线
+    form.sidebar-form[action="#" method="get"]
+      .input-group
+        input.form-control[type="text" name="q" placeholder="搜索..."]
+        span.input-group-btn
+          button#search-btn.btn.btn-flat[type="submit" name="search"]
+            i.fa.fa-search
+    ul.sidebar-menu
+      li.header
+        | 导航栏
+      li.treeview 
+        = link_to '#' do 
+          i.fa.fa-paper-plane-o
+          span
+            | 更新动态
+      li.treeview 
+        = link_to '#' do 
+          i.fa.fa-files-o
+          span 
+            | 资料
+          span.pull-right-container
+            i.fa.fa-angle-left.pull-right
+        - @categories.each do |c| 
+          ul.treeview-menu
+            = link_to '#' do 
+              li 
+                i.fa.fa-file-o
+                span = c.name
+                span.pull-right-container
+                  i.fa.fa-angle-left.pull-right
+                ul.treeview-menu 
+                  li 
+                    = link_to '#' do 
+                      i.fa.fa-file-video-o
+                      | 视频
+                  li
+                    = link_to '#' do 
+                      i.fa.fa-file-text-o 
+                      | 文章 
+                  li 
+                    = link_to '#' do 
+                      i.fa.fa-file-pdf-o
+                      | 书籍    
+      li.treeview 
+        = link_to '#' do 
+          i.fa.fa-cloud-upload
+          span 
+            | 上传作业
+      li.treeview 
+        = link_to '#' do 
+          i.fa.fa-edit 
+          span 
+            | 讨论
+      li.treeview
+        a[href="#"]
+          i.fa.fa-files-o
+          span
+            | Layout Options
+          span.pull-right-container
+            span.label.label-primary.pull-right
+              | 4
+        ul.treeview-menu
+          li
+            a[href="pages/layout/top-nav.html"]
+              i.fa.fa-circle-o
+              |  Top Navigation
+          li
+            a[href="pages/layout/boxed.html"]
+              i.fa.fa-circle-o
+              |  Boxed
+          li
+            a[href="pages/layout/fixed.html"]
+              i.fa.fa-circle-o
+              |  Fixed
+          li
+            a[href="pages/layout/collapsed-sidebar.html"]
+              i.fa.fa-circle-o
+              |  Collapsed Sidebar
+      li
+        a[href="pages/widgets.html"]
+          i.fa.fa-th
+          span
+            | Widgets
+          span.pull-right-container
+            small.label.pull-right.bg-green
+              | new
+      li.treeview
+        a[href="#"]
+          i.fa.fa-pie-chart
+          span
+            | Charts
+          span.pull-right-container
+            i.fa.fa-angle-left.pull-right
+        ul.treeview-menu
+          li
+            a[href="pages/charts/chartjs.html"]
+              i.fa.fa-circle-o
+              |  ChartJS
+          li
+            a[href="pages/charts/morris.html"]
+              i.fa.fa-circle-o
+              |  Morris
+          li
+            a[href="pages/charts/flot.html"]
+              i.fa.fa-circle-o
+              |  Flot
+          li
+            a[href="pages/charts/inline.html"]
+              i.fa.fa-circle-o
+              |  Inline charts
+      li.treeview
+        a[href="#"]
+          i.fa.fa-laptop
+          span
+            | UI Elements
+          span.pull-right-container
+            i.fa.fa-angle-left.pull-right
+        ul.treeview-menu
+          li
+            a[href="pages/UI/general.html"]
+              i.fa.fa-circle-o
+              |  General
+          li
+            a[href="pages/UI/icons.html"]
+              i.fa.fa-circle-o
+              |  Icons
+          li
+            a[href="pages/UI/buttons.html"]
+              i.fa.fa-circle-o
+              |  Buttons
+          li
+            a[href="pages/UI/sliders.html"]
+              i.fa.fa-circle-o
+              |  Sliders
+          li
+            a[href="pages/UI/timeline.html"]
+              i.fa.fa-circle-o
+              |  Timeline
+          li
+            a[href="pages/UI/modals.html"]
+              i.fa.fa-circle-o
+              |  Modals
+      li.treeview
+        a[href="#"]
+          i.fa.fa-edit
+          span
+            | Forms
+          span.pull-right-container
+            i.fa.fa-angle-left.pull-right
+        ul.treeview-menu
+          li
+            a[href="pages/forms/general.html"]
+              i.fa.fa-circle-o
+              |  General Elements
+          li
+            a[href="pages/forms/advanced.html"]
+              i.fa.fa-circle-o
+              |  Advanced Elements
+          li
+            a[href="pages/forms/editors.html"]
+              i.fa.fa-circle-o
+              |  Editors
+      li.treeview
+        a[href="#"]
+          i.fa.fa-table
+          span
+            | Tables
+          span.pull-right-container
+            i.fa.fa-angle-left.pull-right
+        ul.treeview-menu
+          li
+            a[href="pages/tables/simple.html"]
+              i.fa.fa-circle-o
+              |  Simple tables
+          li
+            a[href="pages/tables/data.html"]
+              i.fa.fa-circle-o
+              |  Data tables
+      li
+        a[href="pages/calendar.html"]
+          i.fa.fa-calendar
+          span
+            | Calendar
+          span.pull-right-container
+            small.label.pull-right.bg-red
+              | 3
+            small.label.pull-right.bg-blue
+              | 17
+      li
+        a[href="pages/mailbox/mailbox.html"]
+          i.fa.fa-envelope
+          span
+            | Mailbox
+          span.pull-right-container
+            small.label.pull-right.bg-yellow
+              | 12
+            small.label.pull-right.bg-green
+              | 16
+            small.label.pull-right.bg-red
+              | 5
+      li.treeview
+        a[href="#"]
+          i.fa.fa-folder
+          span
+            | Examples
+          span.pull-right-container
+            i.fa.fa-angle-left.pull-right
+        ul.treeview-menu
+          li
+            a[href="pages/examples/invoice.html"]
+              i.fa.fa-circle-o
+              |  Invoice
+          li
+            a[href="pages/examples/profile.html"]
+              i.fa.fa-circle-o
+              |  Profile
+          li
+            a[href="pages/examples/login.html"]
+              i.fa.fa-circle-o
+              |  Login
+          li
+            a[href="pages/examples/register.html"]
+              i.fa.fa-circle-o
+              |  Register
+          li
+            a[href="pages/examples/lockscreen.html"]
+              i.fa.fa-circle-o
+              |  Lockscreen
+          li
+            a[href="pages/examples/404.html"]
+              i.fa.fa-circle-o
+              |  404 Error
+          li
+            a[href="pages/examples/500.html"]
+              i.fa.fa-circle-o
+              |  500 Error
+          li
+            a[href="pages/examples/blank.html"]
+              i.fa.fa-circle-o
+              |  Blank Page
+          li
+            a[href="pages/examples/pace.html"]
+              i.fa.fa-circle-o
+              |  Pace Page
+      li.treeview
+        a[href="#"]
+          i.fa.fa-share
+          span
+            | Multilevel
+          span.pull-right-container
+            i.fa.fa-angle-left.pull-right
+        ul.treeview-menu
+          li
+            a[href="#"]
+              i.fa.fa-circle-o
+              |  Level One
+          li
+            a[href="#"]
+              i.fa.fa-circle-o
+              |  Level One 
+              span.pull-right-container
+                i.fa.fa-angle-left.pull-right
+            ul.treeview-menu
+              li
+                a[href="#"]
+                  i.fa.fa-circle-o
+                  |  Level Two
+              li
+                a[href="#"]
+                  i.fa.fa-circle-o
+                  |  Level Two 
+                  span.pull-right-container
+                    i.fa.fa-angle-left.pull-right
+                ul.treeview-menu
+                  li
+                    a[href="#"]
+                      i.fa.fa-circle-o
+                      |  Level Three
+                  li
+                    a[href="#"]
+                      i.fa.fa-circle-o
+                      |  Level Three
+          li
+            a[href="#"]
+              i.fa.fa-circle-o
+              |  Level One
+      li
+        a[href="documentation/index.html"]
+          i.fa.fa-book
+          span
+            | Documentation
+      li.header
+        | LABELS
+      li
+        a[href="#"]
+          i.fa.fa-circle-o.text-red
+          span
+            | Important
+      li
+        a[href="#"]
+          i.fa.fa-circle-o.text-yellow
+          span
+            | Warning
+      li
+        a[href="#"]
+          i.fa.fa-circle-o.text-aqua
+          span
+            | Information

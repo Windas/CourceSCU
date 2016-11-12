@@ -33,34 +33,42 @@
           | LTE
       .login-box-body
         p.login-box-msg
-          | Sign in to start your session
-        form[action="../../index2.html" method="post"]
+          | 登录
+        / form[action="../../index2.html" method="post"]
+        /   .form-group.has-feedback
+        /     input.form-control[type="email" placeholder="Email"]
+        /     span.glyphicon.glyphicon-envelope.form-control-feedback
+        /   .form-group.has-feedback
+        /     input.form-control[type="password" placeholder="Password"]
+        /     span.glyphicon.glyphicon-lock.form-control-feedback
+        /   .row
+        /     .col-xs-8
+        /       .checkbox.icheck
+        /         label
+        /           input[type="checkbox"]
+        /           |  Remember Me
+        /     .col-xs-4
+        /       button.btn.btn-primary.btn-block.btn-flat[type="submit"]
+        /         | Sign In
+        = form_for @user, url: session_path(@user), html: { id: 'new-session', class: 'new-session' } do |f|
           .form-group.has-feedback
-            input.form-control[type="email" placeholder="Email"]
+            = f.email_field :email, class: 'form-control', placeholder: '邮箱'
             span.glyphicon.glyphicon-envelope.form-control-feedback
           .form-group.has-feedback
-            input.form-control[type="password" placeholder="Password"]
+            = f.password_field :password, class: 'form-control', autocomplete: 'off', placeholder: '密码'
             span.glyphicon.glyphicon-lock.form-control-feedback
           .row
             .col-xs-8
               .checkbox.icheck
                 label
-                  input[type="checkbox"]
-                  |  Remember Me
+                  = f.check_box :remember_me 
+                  |  记住账户
             .col-xs-4
-              button.btn.btn-primary.btn-block.btn-flat[type="submit"]
-                | Sign In
-        .social-auth-links.text-center
-          p
-            | - OR -
-          a.btn.btn-block.btn-social.btn-facebook.btn-flat[href="#"]
-            i.fa.fa-facebook
-            |  Sign in using Facebook
-          a.btn.btn-block.btn-social.btn-google.btn-flat[href="#"]
-            i.fa.fa-google-plus
-            |  Sign in using Google+
+              button#login-submit.btn.btn-primary.btn-block.btn-flat[type="submit"]
+                | 登录
         a[href="#"]
-          | I forgot my password
+          | 忘记密码
         br
-        a.text-center[href="register.html"]
-          | Register a new membership
+        = link_to '注册新账户', new_user_registration_path, class: 'text-center' 
+javascript: 
+  $('body').addClass('hold-transition login-page');
