@@ -1,0 +1,99 @@
+.wrapper
+  = render 'share/header'
+  .content-wrapper
+    section.content-header
+      h1
+        |  作业中心 
+        small
+          | 所有任务都在这里
+      ol.breadcrumb
+        li
+          a[href="#"]
+            i.fa.fa-dashboard
+            |  首页
+        li.active
+          a[href="#"]
+            | 作业中心
+    section.content
+      .row
+        .col-md-6
+          .box.box-primary
+            .box-header.with-border
+              h3.box-title
+                | 归并单链表
+              .box-tools
+                button.btn.btn-box-tool[type="button" data-widget="collapse"]
+                  i.fa.fa-minus
+                button.btn.btn-box-tool[type="button" data-widget="remove"]
+                  i.fa.fa-times
+            form[role="form"]
+              .box-body
+                p 
+                  | 假设有两个按元素值递增次序排列的线性表，均以单链表形式存储。请编写算法将这两个单链表归并为一个按元素值递减次序排列的单链表，并要求利用原来两个单链表的结点存放归并后的单链表。
+                .form-group
+                  label[for="exampleInputFile"]
+                    | 上传文件
+                  input#exampleInputFile[type="file"]
+                  / p.help-block
+                  /   | 纸质提交
+                .checkbox
+                  label
+                    input[type="checkbox"]
+                    | 纸质提交
+              .box-footer
+                button.btn.btn-primary[type="submit"]
+                  | 提交
+          .box.box-success
+            .box-header.with-border
+              h3.box-title
+                | 哈夫曼树
+              .box-tools
+                button.btn.btn-box-tool[type="button" data-widget="collapse"]
+                  i.fa.fa-minus
+                button.btn.btn-box-tool[type="button" data-widget="remove"]
+                  i.fa.fa-times
+            form[role="form"]
+              .box-body
+                p 
+                  | 给定一组数列（15，8，10，21，6，19，3）分别代表字符A，B，C，D，E，F，G出现的频度，试叙述建立哈夫曼树的算法思想，画出哈夫曼树，给出各字符的编码值，并说明这种编码的优点。
+                .form-group
+                  label[for="exampleInputFile"]
+                    | 上传文件
+                  input#exampleInputFile[type="file"]
+                  / p.help-block
+                  /   | 纸质提交
+                .checkbox
+                  label
+                    input[type="checkbox"]
+                    | 纸质提交
+              .box-footer
+                button.btn.btn-primary[type="submit"]
+                  | 提交
+        .col-md-6
+          .box.box-info
+            .box-header.with-border
+              h3.box-title
+                | 判断队列状态
+              .box-tools
+                button.btn.btn-box-tool[type="button" data-widget="collapse"]
+                  i.fa.fa-minus
+                button.btn.btn-box-tool[type="button" data-widget="remove"]
+                  i.fa.fa-times
+            form[role="form"]
+              .box-body
+                p 
+                  | 假设以数组se[m]存放循环队列的元素，同时设变量rear和num分别作为队尾指针和队中元素个数记录，试给出判别此循环队列的队满条件，并写出相应入队、出队的算法。
+                .form-group
+                  label[for="exampleInputFile"]
+                    | 上传文件
+                  input#exampleInputFile[type="file"]
+                  / p.help-block
+                  /   | 纸质提交
+                .checkbox
+                  label
+                    input[type="checkbox"]
+                    | 纸质提交
+              .box-footer
+                button.btn.btn-primary[type="submit"]
+                  | 提交
+  = render 'share/footer'
