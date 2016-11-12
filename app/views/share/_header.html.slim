@@ -241,10 +241,13 @@ aside.main-sidebar
                       i.fa.fa-file-pdf-o
                       | 书籍    
       li.treeview 
-        = link_to '#' do 
+        = link_to data_homeworks_path do 
           i.fa.fa-cloud-upload
           span 
-            | 上传作业
+            | 作业中心
+          span.pull-right-container
+            small.label.pull-right.bg-red
+              | new
       li.treeview 
         = link_to '#' do 
           i.fa.fa-edit 

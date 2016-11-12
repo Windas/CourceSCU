@@ -4,4 +4,7 @@ Rails.application.routes.draw do
   root to: 'home/visitors#index'
 
   resources :users
+  namespace :data do
+    resources :homeworks
+  end
 end
