@@ -1,0 +1,183 @@
+.content-wrapper
+  section.content-header
+    h1
+      |  全文
+      small
+        | 查看全文
+    ol.breadcrumb
+      li
+        a[href="#"]
+          i.fa.fa-dashboard
+          |  首页
+      li
+        a[href="#"]
+          | 数据结构与算法
+      li
+        | 文章
+      li
+        | 全文
+  section.content
+    .box
+      .box-header.with-border
+        h3.box-title
+          | 《一步一步写算法（之单向链表）》
+        .box-tools.pull-right
+          button.btn.btn-box-tool[type="button" data-widget="collapse" data-toggle="tooltip" title="Collapse"]
+            i.fa.fa-minus
+          button.btn.btn-box-tool[type="button" data-widget="remove" data-toggle="tooltip" title="Remove"]
+            i.fa.fa-times
+      .box-body
+        p 
+          | 有的时候，处于内存中的数据并不是连续的。那么这时候，我们就需要在数据结构中添加一个属性，这个属性会记录下面一个数据的地址。有了这个地址之后，所有的数据就像一条链子一样串起来了，那么这个地址属性就起到了穿线连结的作用。相比较普通的线性结构，链表结构的优势是什么呢？我们可以总结一下：
+        ol 
+          li
+            | 单个节点创建非常方便，普通的线性内存通常在创建的时候就需要设定数据的大小
+          li 
+            | 节点的删除非常方便，不需要像线性结构那样移动剩下的数据
+          li 
+            | 节点的访问方便，可以通过循环或者递归的方法访问到任意数据，但是平均的访问效率低于线性表
+        p 
+          |     那么在实际应用中，链表是怎么设计的呢？我们可以以int数据类型作为基础，设计一个简单的int链表：
+        ul 
+          li 
+            | 设计链表的数据结构
+          code 
+            | typedef struct _LINK_NODE
+            br  
+            | {  
+            br
+            | int data;  
+            br
+            | struct _LINK_NODE* next;  
+            br
+            | }LINK_NODE;
+          li 
+            | 创建链表
+          code
+            | LINK_NODE* alloca_node(int value)  
+            br
+            |  { 
+            br 
+            |      LINK_NODE* pLinkNode = NULL;  
+            br
+            |      pLinkNode = (LINK_NODE*)malloc(sizeof(LINK_NODE));  
+            br        
+            |      pLinkNode->data = value; 
+            br 
+            |      pLinkNode->next = NULL;  
+            br
+            |      return pLinkNode;
+            br
+            |  }  
+          li
+            | 删除链表
+          code 
+            | void delete_node(LINK_NODE** pNode)  
+            br
+            | {  
+            br
+            | LINK_NODE** pNext;  
+            br
+            | if(NULL == pNode || NULL == *pNode)  
+            br
+            | return ;  
+            br
+            | pNext = &(*pNode)->next;  
+            br
+            | free(*pNode);  
+            br
+            | delete_node(pNext);   
+            br
+            | }
+          li 
+            | 链表插入数据
+          code
+            | STATUS _add_data(LINK_NODE** pNode, LINK_NODE* pDataNode)  
+            br
+            | {  
+            br
+            | if(NULL == *pNode){  
+            br
+            | *pNode = pDataNode;  
+            br
+            | return TRUE;  
+            br
+            | }  
+            br
+            | return _add_data(&(*pNode)->next, pDataNode);  
+            br
+            | }  
+            br
+            | STATUS add_data(const LINK_NODE** pNode, int value)  
+            br
+            | {  
+            br
+            | LINK_NODE* pDataNode;  
+            br
+            | if(NULL == *pNode)  
+            br
+            | return FALSE;  
+            br 
+            | pDataNode = alloca_node(value);  
+            br
+            | assert(NULL != pDataNode);  
+            br
+            | return _add_data((LINK_NODE**)pNode, pDataNode);  
+            br
+            | }  
+          li 
+            | 删除数据
+          code 
+            | STATUS _delete_data(LINK_NODE** pNode, int value)  
+            br
+            | {  
+            br
+            | LINK_NODE* pLinkNode;  
+            br
+            | if(NULL == (*pNode)->next)  
+            br
+            | return FALSE;  
+            br
+            | pLinkNode = (*pNode)->next;  
+            br
+            | if(value == pLinkNode->data){  
+            br
+            | (*pNode)->next = pLinkNode->next;  
+            br
+            | free(pLinkNode);  
+            br
+            | return TRUE;  
+            br
+            | }else{  
+            br
+            | return _delete_data(&(*pNode)->next, value);  
+            br
+            | }  
+            br
+            | }  
+            br
+            | STATUS delete_data(LINK_NODE** pNode, int value)  
+            br
+            | {  
+            br
+            | LINK_NODE* pLinkNode;  
+            br
+            | if(NULL == pNode || NULL == *pNode)  
+            br
+            | return FALSE;  
+            br
+            | if(value == (*pNode)->data){  
+            br
+            | pLinkNode = *pNode;  
+            br
+            | *pNode = pLinkNode->next;  
+            br
+            | free(pLinkNode);  
+            br
+            | return TRUE;  
+            br
+            | }         
+            br
+            | return _delete_data(pNode, value);  
+            br
+            | } 

@@ -1,0 +1,53 @@
+.content-wrapper
+  section.content-header
+    h1
+      |  文章 
+      small
+        | 所有文章资源
+    ol.breadcrumb
+      li
+        a[href="#"]
+          i.fa.fa-dashboard
+          |  首页
+      li
+        a[href="#"]
+          | 数据结构与算法
+      li.active
+        | 文章
+  section.content
+    .box
+      .box-header.with-border
+        h3.box-title
+          | 数据结构与算法
+        .box-tools.pull-right
+          button.btn.btn-box-tool[type="button" data-widget="collapse" data-toggle="tooltip" title="Collapse"]
+            i.fa.fa-minus
+          button.btn.btn-box-tool[type="button" data-widget="remove" data-toggle="tooltip" title="Remove"]
+            i.fa.fa-times
+      .box-body
+        .attachment-block.clearfix
+          = image_tag 'photo1.png', alt: 'Attachment Image', class: 'attachment-img'
+          .attachment-pushed
+            h4.attachment-heading
+              = link_to '《一步一步写算法（之单向链表）》', data_category_article_path(id: 1)
+            .attachment-text
+              |  有的时候，处于内存中的数据并不是连续的。那么这时候，我们就需要在数据结构中添加一个属性，这个属性会记录下面一个数据的地址。有了这个地址之后，所有的数据就像一条链子一样串起来了，那么这个地址属性就起到了穿线连结的作用... 
+              = link_to '查看原文', data_category_article_path(id: 1)
+    .box
+      .box-header.with-border
+        h3.box-title
+          | 数据结构与算法
+        .box-tools.pull-right
+          button.btn.btn-box-tool[type="button" data-widget="collapse" data-toggle="tooltip" title="Collapse"]
+            i.fa.fa-minus
+          button.btn.btn-box-tool[type="button" data-widget="remove" data-toggle="tooltip" title="Remove"]
+            i.fa.fa-times
+      .box-body
+        .attachment-block.clearfix
+          = image_tag 'photo1.png', alt: 'Attachment Image', class: 'attachment-img'
+          .attachment-pushed
+            h4.attachment-heading
+              = link_to '《算法之二叉树各种遍历》', data_category_article_path(id: 1)
+            .attachment-text
+              |  树形结构是一类重要的非线性数据结构，其中以树和二叉树最为常用... 
+              = link_to '查看原文', data_category_article_path(id: 1)

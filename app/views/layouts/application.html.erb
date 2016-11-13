@@ -15,6 +15,9 @@
         <%= yield %>
         <%= render 'share/footer' %>
       </div>
+      <script>
+        $('body').addClass('hold-transition skin-blue sidebar-mini');
+      </script>
     <% else %>
       <%= yield %>
     <% end %>

@@ -12,5 +12,7 @@ class CreateDataArticles < ActiveRecord::Migration[5.0]
 
       t.timestamps
     end
+
+    Data::Article.create data_categories_id: 3, title: '一步一步写算法（之单向链表）', content: 'test'
   end
 end
