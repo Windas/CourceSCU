@@ -1,287 +1,284 @@
-.wrapper
-  = render 'share/header'
-  .content-wrapper
-    section.content-header
-      h1
-        |  个人中心
-        small
-          | 你的日历 
-      ol.breadcrumb
-        li
-          a[href="#"]
-            i.fa.fa-dashboard
-            | 首页
-        li.active
-          | 个人中心
-    section.content
-      .row
-        .col-md-3
-          .box.box-primary
-            .box-body.box-profile
-              = image_tag 'user2-160x160.jpg', alt: 'User profile picture', class: 'profile-user-img img-responsive img-circle'
-              h3.profile-username.text-center = current_user.nick_name
-              p.text-muted.text-center
-                | 努力学好前端
-              / ul.list-group.list-group-unbordered
-              /   li.list-group-item
-              /     b
-              /       | Followers
-              /     a.pull-right
-              /       | 1,322
-              /   li.list-group-item
-              /     b
-              /       | Following
-              /     a.pull-right
-              /       | 543
-              /   li.list-group-item
-              /     b
-              /       | Friends
-              /     a.pull-right
-              /       | 13,287
-              / a.btn.btn-primary.btn-block[href="#"]
-              /   b
-              /     | Follow
-          .box.box-primary
-            .box-header.with-border
-              h3.box-title
-                | 个人资料
-            .box-body
-              strong
-                i.fa.fa-book.margin-r-5
-                |  年级与班级
-              p.text-muted
-                |  2016级软件一班
-              / hr
-              / strong
-              /   i.fa.fa-map-marker.margin-r-5
-              /   |  Location
-              / p.text-muted
-              /   | Malibu, California
-              hr
-              strong
-                i.fa.fa-pencil.margin-r-5
-                |  技能
-              p
-                span.tag.label
-                  | 前端设计
-                span.tag.label
-                  | Ruby on Rails
-                span.tag.label
-                  | Javascript
-                span.tag.label
-                  | PHP
-                span.tag.label
-                  | Node.js
-              hr
-              strong
-                i.fa.fa-feed.margin-r-5
-                |  关注话题
-              p
-                - current_user.find_categories.each do |c|
-                  span.tag.label = current_user.find_category(c)
-              hr
-              strong
-                i.fa.fa-file-text-o.margin-r-5
-                |  简介
-              p
-                | 一个来自软件学院的前端萌新，想学好前端技术
-        .col-md-9
-          .nav-tabs-custom
-            ul.nav.nav-tabs
-              / li.active
-              /   a[href="#activity" data-toggle="tab"]
-              /     | Activity
-              li.active
-                a[href="#timeline" data-toggle="tab"]
-                  | 时间轴
-              li
-                a[href="#settings" data-toggle="tab"]
-                  | 设定
-            .tab-content
-              / #activity.active.tab-pane
-              /   .post
-              /     .user-block
-              /       img.img-circle.img-bordered-sm[src="../../dist/img/user1-128x128.jpg" alt="user image"]
-              /       span.username
-              /         a[href="#"]
-              /           | Jonathan Burke Jr.
-              /         a.pull-right.btn-box-tool[href="#"]
-              /           i.fa.fa-times
-              /       span.description
-              /         | Shared publicly - 7:30 PM today
-              /     p
-              /       |  Lorem ipsum represents a long-held tradition for designers, typographers and the like. Some people hate it and argue for its demise, but others ignore the hate as they create awesome tools to help create filler text for everyone from bacon lovers to Charlie Sheen fans. 
-              /     ul.list-inline
-              /       li
-              /         a.link-black.text-sm[href="#"]
-              /           i.fa.fa-share.margin-r-5
-              /           |  Share
-              /       li
-              /         a.link-black.text-sm[href="#"]
-              /           i.fa.fa-thumbs-o-up.margin-r-5
-              /           |  Like
-              /       li.pull-right
-              /         a.link-black.text-sm[href="#"]
-              /           i.fa.fa-comments-o.margin-r-5
-              /           |  Comments (5)
-              /     input.form-control.input-sm[type="text" placeholder="Type a comment"]
-              /   .post.clearfix
-              /     .user-block
-              /       img.img-circle.img-bordered-sm[src="../../dist/img/user7-128x128.jpg" alt="User Image"]
-              /       span.username
-              /         a[href="#"]
-              /           | Sarah Ross
-              /         a.pull-right.btn-box-tool[href="#"]
-              /           i.fa.fa-times
-              /       span.description
-              /         | Sent you a message - 3 days ago
-              /     p
-              /       |  Lorem ipsum represents a long-held tradition for designers, typographers and the like. Some people hate it and argue for its demise, but others ignore the hate as they create awesome tools to help create filler text for everyone from bacon lovers to Charlie Sheen fans. 
-              /     form.form-horizontal
-              /       .form-group.margin-bottom-none
-              /         .col-sm-9
-              /           input.form-control.input-sm[placeholder="Response"]
-              /         .col-sm-3
-              /           button.btn.btn-danger.pull-right.btn-block.btn-sm[type="submit"]
-              /             | Send
-              /   .post
-              /     .user-block
-              /       img.img-circle.img-bordered-sm[src="../../dist/img/user6-128x128.jpg" alt="User Image"]
-              /       span.username
-              /         a[href="#"]
-              /           | Adam Jones
-              /         a.pull-right.btn-box-tool[href="#"]
-              /           i.fa.fa-times
-              /       span.description
-              /         | Posted 5 photos - 5 days ago
-              /     .row.margin-bottom
-              /       .col-sm-6
-              /         img.img-responsive[src="../../dist/img/photo1.png" alt="Photo"]
-              /       .col-sm-6
-              /         .row
-              /           .col-sm-6
-              /             img.img-responsive[src="../../dist/img/photo2.png" alt="Photo"]
-              /             br
-              /             img.img-responsive[src="../../dist/img/photo3.jpg" alt="Photo"]
-              /           .col-sm-6
-              /             img.img-responsive[src="../../dist/img/photo4.jpg" alt="Photo"]
-              /             br
-              /             img.img-responsive[src="../../dist/img/photo1.png" alt="Photo"]
-              /     ul.list-inline
-              /       li
-              /         a.link-black.text-sm[href="#"]
-              /           i.fa.fa-share.margin-r-5
-              /           |  Share
-              /       li
-              /         a.link-black.text-sm[href="#"]
-              /           i.fa.fa-thumbs-o-up.margin-r-5
-              /           |  Like
-              /       li.pull-right
-              /         a.link-black.text-sm[href="#"]
-              /           i.fa.fa-comments-o.margin-r-5
-              /           |  Comments (5)
-              /     input.form-control.input-sm[type="text" placeholder="Type a comment"]
-              #timeline.active.tab-pane
-                ul.timeline.timeline-inverse
-                  li.time-label
-                    span.bg-red
-                      |  2016年11月12日 
-                  li
-                    i.fa.fa-envelope.bg-blue
-                    .timeline-item
-                      span.time
-                        i.fa.fa-clock-o
-                        |  12:05
-                      h3.timeline-header
-                        a[href="#"]
-                          | 资料库
-                        |  更新了新的资料
-                      .timeline-body
-                        |  Etsy doostang zoodles disqus groupon greplin oooj voxy zoodles, weebly ning heekya handango imeem plugg dopplr jibjab, movity jajah plickers sifteo edmodo ifttt zimbra. Babblely odeo kaboodle quora plaxo ideeli hulu weebly balihoo... 
-                      .timeline-footer
-                        a.btn.btn-primary.btn-xs
-                          | 查看
-                  / li
-                  /   i.fa.fa-user.bg-aqua
-                  /   .timeline-item
-                  /     span.time
-                  /       i.fa.fa-clock-o
-                  /       |  5 mins ago
-                  /     h3.timeline-header.no-border
-                  /       a[href="#"]
-                  /         | Sarah Young
-                  /       |  accepted your friend request 
-                  li
-                    i.fa.fa-comments.bg-yellow
-                    .timeline-item
-                      span.time
-                        i.fa.fa-clock-o
-                        |  18:33
-                      h3.timeline-header
-                        a[href="#"]
-                          | 测试用户2
-                        |  回复了你
-                      .timeline-body
-                        |  一起好好学习前端吧，互相进步
-                      .timeline-footer
-                        a.btn.btn-warning.btn-flat.btn-xs
-                          | 查看回复
-                  li.time-label
-                    span.bg-green
-                      |  2016年11月10日 
-                  li
-                    i.fa.fa-envelope.bg-blue
-                    .timeline-item
-                      span.time
-                        i.fa.fa-clock-o
-                        |  2 days ago
-                      h3.timeline-header
-                        a[href="#"]
-                          | 资料库
-                        |  更新了新的资料
-                      .timeline-body
-                        |  Etsy doostang zoodles disqus groupon greplin oooj voxy zoodles, weebly ning heekya handango imeem plugg dopplr jibjab, movity jajah plickers sifteo edmodo ifttt zimbra. Babblely odeo kaboodle quora plaxo ideeli hulu weebly balihoo... 
-                      .timeline-footer
-                        a.btn.btn-primary.btn-xs
-                          | 查看
-                        / img.margin[src="http://placehold.it/150x100" alt="..."]
-                        / img.margin[src="http://placehold.it/150x100" alt="..."]
-                        / img.margin[src="http://placehold.it/150x100" alt="..."]
-                        / img.margin[src="http://placehold.it/150x100" alt="..."]
-                  li
-                    i.fa.fa-clock-o.bg-gray
-              #settings.tab-pane
-                form.form-horizontal
-                  .form-group
-                    label.col-sm-2.control-label[for="inputName"]
-                      | 昵称
-                    .col-sm-10
-                      input#inputName.form-control[type="email" placeholder="昵称" value=current_user.nick_name]
-                  .form-group
-                    label.col-sm-2.control-label[for="inputEmail"]
-                      | 邮箱
-                    .col-sm-10
-                      input#inputEmail.form-control[type="email" placeholder="邮箱" value=current_user.email disabled=true]
-                  .form-group
-                    label.col-sm-2.control-label[for="inputName"]
-                      | 真名
-                    .col-sm-10
-                      input#inputName.form-control[type="text" placeholder="真名" value=current_user.name]
-                  .form-group
-                    label.col-sm-2.control-label[for="inputExperience"]
-                      | 简介
-                    .col-sm-10
-                      textarea#inputExperience.form-control[placeholder="简介" value=current_user.description]
-                  .form-group
-                    label.col-sm-2.control-label[for="inputSkills"]
-                      | 技能
-                    .col-sm-10
-                      input#inputSkills.form-control[type="text" placeholder="技能"]
-                  .form-group
-                    .col-sm-offset-2.col-sm-10
-                      button.btn.btn-danger[type="submit"]
-                        | 提交更改
-  = render 'share/footer'
+.content-wrapper
+  section.content-header
+    h1
+      |  个人中心
+      small
+        | 你的日历 
+    ol.breadcrumb
+      li
+        a[href="#"]
+          i.fa.fa-dashboard
+          | 首页
+      li.active
+        | 个人中心
+  section.content
+    .row
+      .col-md-3
+        .box.box-primary
+          .box-body.box-profile
+            = image_tag 'user2-160x160.jpg', alt: 'User profile picture', class: 'profile-user-img img-responsive img-circle'
+            h3.profile-username.text-center = current_user.nick_name
+            p.text-muted.text-center
+              | 努力学好前端
+            / ul.list-group.list-group-unbordered
+            /   li.list-group-item
+            /     b
+            /       | Followers
+            /     a.pull-right
+            /       | 1,322
+            /   li.list-group-item
+            /     b
+            /       | Following
+            /     a.pull-right
+            /       | 543
+            /   li.list-group-item
+            /     b
+            /       | Friends
+            /     a.pull-right
+            /       | 13,287
+            / a.btn.btn-primary.btn-block[href="#"]
+            /   b
+            /     | Follow
+        .box.box-primary
+          .box-header.with-border
+            h3.box-title
+              | 个人资料
+          .box-body
+            strong
+              i.fa.fa-book.margin-r-5
+              |  年级与班级
+            p.text-muted
+              |  2016级软件一班
+            / hr
+            / strong
+            /   i.fa.fa-map-marker.margin-r-5
+            /   |  Location
+            / p.text-muted
+            /   | Malibu, California
+            hr
+            strong
+              i.fa.fa-pencil.margin-r-5
+              |  技能
+            p
+              span.tag.label
+                | 前端设计
+              span.tag.label
+                | Ruby on Rails
+              span.tag.label
+                | Javascript
+              span.tag.label
+                | PHP
+              span.tag.label
+                | Node.js
+            hr
+            strong
+              i.fa.fa-feed.margin-r-5
+              |  关注话题
+            p
+              - current_user.find_categories.each do |c|
+                span.tag.label = current_user.find_category(c)
+            hr
+            strong
+              i.fa.fa-file-text-o.margin-r-5
+              |  简介
+            p
+              | 一个来自软件学院的前端萌新，想学好前端技术
+      .col-md-9
+        .nav-tabs-custom
+          ul.nav.nav-tabs
+            / li.active
+            /   a[href="#activity" data-toggle="tab"]
+            /     | Activity
+            li.active
+              a[href="#timeline" data-toggle="tab"]
+                | 时间轴
+            li
+              a[href="#settings" data-toggle="tab"]
+                | 设定
+          .tab-content
+            / #activity.active.tab-pane
+            /   .post
+            /     .user-block
+            /       img.img-circle.img-bordered-sm[src="../../dist/img/user1-128x128.jpg" alt="user image"]
+            /       span.username
+            /         a[href="#"]
+            /           | Jonathan Burke Jr.
+            /         a.pull-right.btn-box-tool[href="#"]
+            /           i.fa.fa-times
+            /       span.description
+            /         | Shared publicly - 7:30 PM today
+            /     p
+            /       |  Lorem ipsum represents a long-held tradition for designers, typographers and the like. Some people hate it and argue for its demise, but others ignore the hate as they create awesome tools to help create filler text for everyone from bacon lovers to Charlie Sheen fans. 
+            /     ul.list-inline
+            /       li
+            /         a.link-black.text-sm[href="#"]
+            /           i.fa.fa-share.margin-r-5
+            /           |  Share
+            /       li
+            /         a.link-black.text-sm[href="#"]
+            /           i.fa.fa-thumbs-o-up.margin-r-5
+            /           |  Like
+            /       li.pull-right
+            /         a.link-black.text-sm[href="#"]
+            /           i.fa.fa-comments-o.margin-r-5
+            /           |  Comments (5)
+            /     input.form-control.input-sm[type="text" placeholder="Type a comment"]
+            /   .post.clearfix
+            /     .user-block
+            /       img.img-circle.img-bordered-sm[src="../../dist/img/user7-128x128.jpg" alt="User Image"]
+            /       span.username
+            /         a[href="#"]
+            /           | Sarah Ross
+            /         a.pull-right.btn-box-tool[href="#"]
+            /           i.fa.fa-times
+            /       span.description
+            /         | Sent you a message - 3 days ago
+            /     p
+            /       |  Lorem ipsum represents a long-held tradition for designers, typographers and the like. Some people hate it and argue for its demise, but others ignore the hate as they create awesome tools to help create filler text for everyone from bacon lovers to Charlie Sheen fans. 
+            /     form.form-horizontal
+            /       .form-group.margin-bottom-none
+            /         .col-sm-9
+            /           input.form-control.input-sm[placeholder="Response"]
+            /         .col-sm-3
+            /           button.btn.btn-danger.pull-right.btn-block.btn-sm[type="submit"]
+            /             | Send
+            /   .post
+            /     .user-block
+            /       img.img-circle.img-bordered-sm[src="../../dist/img/user6-128x128.jpg" alt="User Image"]
+            /       span.username
+            /         a[href="#"]
+            /           | Adam Jones
+            /         a.pull-right.btn-box-tool[href="#"]
+            /           i.fa.fa-times
+            /       span.description
+            /         | Posted 5 photos - 5 days ago
+            /     .row.margin-bottom
+            /       .col-sm-6
+            /         img.img-responsive[src="../../dist/img/photo1.png" alt="Photo"]
+            /       .col-sm-6
+            /         .row
+            /           .col-sm-6
+            /             img.img-responsive[src="../../dist/img/photo2.png" alt="Photo"]
+            /             br
+            /             img.img-responsive[src="../../dist/img/photo3.jpg" alt="Photo"]
+            /           .col-sm-6
+            /             img.img-responsive[src="../../dist/img/photo4.jpg" alt="Photo"]
+            /             br
+            /             img.img-responsive[src="../../dist/img/photo1.png" alt="Photo"]
+            /     ul.list-inline
+            /       li
+            /         a.link-black.text-sm[href="#"]
+            /           i.fa.fa-share.margin-r-5
+            /           |  Share
+            /       li
+            /         a.link-black.text-sm[href="#"]
+            /           i.fa.fa-thumbs-o-up.margin-r-5
+            /           |  Like
+            /       li.pull-right
+            /         a.link-black.text-sm[href="#"]
+            /           i.fa.fa-comments-o.margin-r-5
+            /           |  Comments (5)
+            /     input.form-control.input-sm[type="text" placeholder="Type a comment"]
+            #timeline.active.tab-pane
+              ul.timeline.timeline-inverse
+                li.time-label
+                  span.bg-red
+                    |  2016年11月12日 
+                li
+                  i.fa.fa-envelope.bg-blue
+                  .timeline-item
+                    span.time
+                      i.fa.fa-clock-o
+                      |  12:05
+                    h3.timeline-header
+                      a[href="#"]
+                        | 资料库
+                      |  更新了新的资料
+                    .timeline-body
+                      |  Etsy doostang zoodles disqus groupon greplin oooj voxy zoodles, weebly ning heekya handango imeem plugg dopplr jibjab, movity jajah plickers sifteo edmodo ifttt zimbra. Babblely odeo kaboodle quora plaxo ideeli hulu weebly balihoo... 
+                    .timeline-footer
+                      a.btn.btn-primary.btn-xs
+                        | 查看
+                / li
+                /   i.fa.fa-user.bg-aqua
+                /   .timeline-item
+                /     span.time
+                /       i.fa.fa-clock-o
+                /       |  5 mins ago
+                /     h3.timeline-header.no-border
+                /       a[href="#"]
+                /         | Sarah Young
+                /       |  accepted your friend request 
+                li
+                  i.fa.fa-comments.bg-yellow
+                  .timeline-item
+                    span.time
+                      i.fa.fa-clock-o
+                      |  18:33
+                    h3.timeline-header
+                      a[href="#"]
+                        | 测试用户2
+                      |  回复了你
+                    .timeline-body
+                      |  一起好好学习前端吧，互相进步
+                    .timeline-footer
+                      a.btn.btn-warning.btn-flat.btn-xs
+                        | 查看回复
+                li.time-label
+                  span.bg-green
+                    |  2016年11月10日 
+                li
+                  i.fa.fa-envelope.bg-blue
+                  .timeline-item
+                    span.time
+                      i.fa.fa-clock-o
+                      |  2 days ago
+                    h3.timeline-header
+                      a[href="#"]
+                        | 资料库
+                      |  更新了新的资料
+                    .timeline-body
+                      |  Etsy doostang zoodles disqus groupon greplin oooj voxy zoodles, weebly ning heekya handango imeem plugg dopplr jibjab, movity jajah plickers sifteo edmodo ifttt zimbra. Babblely odeo kaboodle quora plaxo ideeli hulu weebly balihoo... 
+                    .timeline-footer
+                      a.btn.btn-primary.btn-xs
+                        | 查看
+                      / img.margin[src="http://placehold.it/150x100" alt="..."]
+                      / img.margin[src="http://placehold.it/150x100" alt="..."]
+                      / img.margin[src="http://placehold.it/150x100" alt="..."]
+                      / img.margin[src="http://placehold.it/150x100" alt="..."]
+                li
+                  i.fa.fa-clock-o.bg-gray
+            #settings.tab-pane
+              form.form-horizontal
+                .form-group
+                  label.col-sm-2.control-label[for="inputName"]
+                    | 昵称
+                  .col-sm-10
+                    input#inputName.form-control[type="email" placeholder="昵称" value=current_user.nick_name]
+                .form-group
+                  label.col-sm-2.control-label[for="inputEmail"]
+                    | 邮箱
+                  .col-sm-10
+                    input#inputEmail.form-control[type="email" placeholder="邮箱" value=current_user.email disabled=true]
+                .form-group
+                  label.col-sm-2.control-label[for="inputName"]
+                    | 真名
+                  .col-sm-10
+                    input#inputName.form-control[type="text" placeholder="真名" value=current_user.name]
+                .form-group
+                  label.col-sm-2.control-label[for="inputExperience"]
+                    | 简介
+                  .col-sm-10
+                    textarea#inputExperience.form-control[placeholder="简介" value=current_user.description]
+                .form-group
+                  label.col-sm-2.control-label[for="inputSkills"]
+                    | 技能
+                  .col-sm-10
+                    input#inputSkills.form-control[type="text" placeholder="技能"]
+                .form-group
+                  .col-sm-offset-2.col-sm-10
+                    button.btn.btn-danger[type="submit"]
+                      | 提交更改
   javascript:
     var randomClass = new Array("label-danger", "label-success", "label-info", "label-warning", "label-primary");
     var randomNum;

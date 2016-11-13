@@ -1,0 +1,2 @@
+module Data::ArticlesHelper
+end

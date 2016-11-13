@@ -6,5 +6,10 @@ Rails.application.routes.draw do
   resources :users
   namespace :data do
     resources :homeworks
+    resources :categories do
+      resources :books
+      resources :videos
+      resources :articles
+    end
   end
 end

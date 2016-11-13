@@ -10,7 +10,33 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20161112155055) do
+ActiveRecord::Schema.define(version: 20161113110300) do
+
+  create_table "data_articles", force: :cascade do |t|
+    t.string   "title",                             null: false
+    t.boolean  "active",             default: true, null: false
+    t.boolean  "published",          default: true, null: false
+    t.string   "source"
+    t.datetime "published_at"
+    t.text     "description"
+    t.text     "content",                           null: false
+    t.integer  "data_categories_id"
+    t.datetime "created_at",                        null: false
+    t.datetime "updated_at",                        null: false
+    t.index ["data_categories_id"], name: "index_data_articles_on_data_categories_id"
+  end
+
+  create_table "data_books", force: :cascade do |t|
+    t.string   "title",              default: "",   null: false
+    t.text     "description"
+    t.boolean  "active",             default: true, null: false
+    t.boolean  "published",          default: true, null: false
+    t.datetime "published_at"
+    t.integer  "data_categories_id"
+    t.datetime "created_at",                        null: false
+    t.datetime "updated_at",                        null: false
+    t.index ["data_categories_id"], name: "index_data_books_on_data_categories_id"
+  end
 
   create_table "data_categories", force: :cascade do |t|
     t.string   "name",                        null: false
@@ -31,6 +57,20 @@ ActiveRecord::Schema.define(version: 20161112155055) do
     t.datetime "published_at"
     t.datetime "created_at",                  null: false
     t.datetime "updated_at",                  null: false
+  end
+
+  create_table "data_videos", force: :cascade do |t|
+    t.string   "title",                             null: false
+    t.string   "url",                               null: false
+    t.string   "source"
+    t.boolean  "active",             default: true, null: false
+    t.boolean  "published",          default: true, null: false
+    t.datetime "published_at"
+    t.text     "description"
+    t.integer  "data_categories_id"
+    t.datetime "created_at",                        null: false
+    t.datetime "updated_at",                        null: false
+    t.index ["data_categories_id"], name: "index_data_videos_on_data_categories_id"
   end
 
   create_table "users", force: :cascade do |t|
