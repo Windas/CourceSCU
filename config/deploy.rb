@@ -10,8 +10,8 @@ require 'mina/rvm'    # for rvm support. (https://rvm.io)
 #   branch       - Branch name to deploy. (needed by mina/git)
 
 set :domain, 'swjx.scu.edu.cn'
-set :deploy_to, '/root/rails'
-set :repository, 'git://...'
+set :deploy_to, '/root/rails/cource-scu'
+set :repository, 'git@github.com:Windas/CourceSCU.git'
 set :branch, 'develop'
 
 # Optional settings:
@@ -31,7 +31,7 @@ task :environment do
   # invoke :'rbenv:load'
 
   # For those using RVM, use this to load an RVM version@gemset.
-  # invoke :'rvm:use', 'ruby-1.9.3-p125@default'
+  invoke :'rvm:use', 'ruby-2.3.0@class_web'
 end
 
 # Put any custom commands you need to run at setup
